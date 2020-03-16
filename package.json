@@ -1,0 +1,24 @@
+{
+  "name": "workout",
+  "version": "1.0.0",
+  "description": "Fitness Tracker",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeders/seed.js"
+  },
+  "author": "Tonnette",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongo-seeding": "^3.4.0",
+    "mongoose": "^5.3.16",
+    "morgan": "^1.9.1"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "fitness"
+  ]
+}
