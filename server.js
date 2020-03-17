@@ -18,7 +18,7 @@ app.use(express.json());
 app.use(express.static("public"));
 app.use(bodyParser.json())
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workoutdb", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/workout", { useNewUrlParser: true });
 
 // Routes
 // =============================================================
@@ -29,6 +29,17 @@ app.get("/api/workouts", function (req, res) {
   db.Workout.find({}).then(function (dbWorkout) {
     res.json(dbWorkout);
   });
+});
+
+app.get("/api/workouts/range", (req, res) => {
+  db.Workout.find({})
+    .populate("workouts")
+    .then(dbUser => {
+      res.json(dbUser);
+    })
+    .catch(err => {
+      res.json(err);
+    });
 });
 
 
@@ -69,11 +80,17 @@ app.put("/api/workouts/:id", ({ body, params }, res) => {
 });
 
 
-app.get("/workouts", function (req, res) {
-  db.Workout.find({}).then(function (dbWorkout) {
-    res.json(dbWorkout);
-  });
+app.get("/workouts", (req, res) => {
+  db.Workout.find({})
+    .populate("workouts")
+    .then(dbUser => {
+      res.json(dbUser);
+    })
+    .catch(err => {
+      res.json(err);
+    });
 });
+
 
 app.put("/workouts/:id", function (req, res) {
   db.Workout.updateOne({ _id: req.params.id }, { type: req.body.type }, { name: req.body.name }, { duration: req.body.duration }, { distance: req.body.distance },
