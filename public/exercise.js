@@ -7,6 +7,7 @@ const weightInput = document.querySelector("#weight");
 const setsInput = document.querySelector("#sets");
 const repsInput = document.querySelector("#reps");
 const durationInput = document.querySelector("#duration");
+console.log(durationInput);
 const resistanceDurationInput = document.querySelector("#resistance-duration");
 const distanceInput = document.querySelector("#distance");
 const completeButton = document.querySelector("button.complete");
