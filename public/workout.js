@@ -5,10 +5,12 @@ async function initWorkout() {
     document
       .querySelector("a[href='/exercise?']")
       .setAttribute("href", `/exercise?id=${lastWorkout._id}`);
+console.log(JSON.stringify(lastWorkout))
+var index = lastWorkout.exercises.length - 1;
 
     const workoutSummary = {
       date: formatDate(lastWorkout.day),
-      totalDuration: lastWorkout.totalDuration,
+      totalDuration: lastWorkout.exercises[index].duration,
       numExercises: lastWorkout.exercises.length,
       ...tallyExercises(lastWorkout.exercises)
     };
@@ -18,6 +20,7 @@ async function initWorkout() {
     renderNoWorkoutText()
   }
 }
+
 
 function tallyExercises(exercises) {
   const tallied = exercises.reduce((acc, curr) => {
