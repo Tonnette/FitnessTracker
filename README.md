@@ -11,7 +11,7 @@ The user can:
   * View the statistics of their exercises on the `stats` page.
 
 # Screen Shot
-![ScreenShot](https://github.com/Tonnette/newPortfolio/blob/master/Fitness.png)
+![ScreenShot](https://github.com/Tonnette/FitnessTracker/blob/master/Fitness.png)
 
 # Deployed App
 https://tonnette-fitness-tracker.herokuapp.com/stats
