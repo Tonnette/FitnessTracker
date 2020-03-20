@@ -93,12 +93,12 @@ app.get("/workouts", (req, res) => {
 });
 
 
-app.put("/workouts/:id", function (req, res) {
-  db.Workout.updateOne({ _id: req.params.id }, { type: req.body.type }, { name: req.body.name }, { duration: req.body.duration }, { distance: req.body.distance },
-    { weight: req.body.weight }, { reps: req.body.reps }, { sets: req.body.sets }).then(function (dbWorkout) {
-      res.json(dbWorkout);
-    });
-});
+// app.put("/workouts/:id", function (req, res) {
+//   db.Workout.updateOne({ _id: req.params.id }, { type: req.body.type }, { name: req.body.name }, { duration: req.body.duration }, { distance: req.body.distance },
+//     { weight: req.body.weight }, { reps: req.body.reps }, { sets: req.body.sets }).then(function (dbWorkout) {
+//       res.json(dbWorkout);
+//     });
+// });
 
 
 
